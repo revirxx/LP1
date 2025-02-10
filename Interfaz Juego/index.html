@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAL 2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Fondo video menu-->
+    <video autoplay loop muted id="background-video">
+        <source src="/Fondos/fondo_principal 1.mp4" type="video/mp4">
+    </video>
+
+    <!-- Audio en menu -->
+    <audio id="menu-audio" loop autoplay>
+        <source src="/Sonidos/(Audio) fondo_principal.m4a" type="audio/mpeg">
+    </audio>
+     
+    <!-- Logo -->
+    <div id="logo">
+        <img src="/Fondos/logo.png" alt="Portal 2">
+    </div>
+    
+    <!-- Menú-->
+    <ul id="menu">
+        <li class="menu-item">JUGAR SOLO</li>
+        <li class="menu-item">JUGAR PARTIDA COOP</li>
+        <li class="menu-item">CÁMARAS DE LA COMUNIDAD</li>
+        <li class="menu-item">OPCIONES</li>
+        <li class="menu-item">EXTRAS</li>
+        <li class="menu-item">SALIR</li>
+        <li class="menu-item">Desarrollo del robot</li>
+    </ul>
+    
+    <!-- Audio desplazamiento menu-->
+    <audio id="sonido_desp">
+        <source src="/Sonidos/desplazamiento.wav" type="audio/mpeg">
+    </audio>
+    
+
+    <script src="juego.js"></script>
+</body>
+</html>
