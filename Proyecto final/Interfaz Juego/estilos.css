@@ -1,59 +1,59 @@
 /* Estilos generales */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    cursor: default;
+    margin: 0;          /* Elimina los márgenes predeterminados de los elementos */
+    padding: 0;         /* Elimina el espacio interno de los elementos */
+    box-sizing: border-box;  /* Asegura que el ancho y alto incluyan el padding y el borde */
+    font-family: Arial, sans-serif;  /* Define la fuente predeterminada */
+    cursor: default;  /* Evita que el cursor cambie al pasar sobre elementos de texto */
 }
 
 body {
-    overflow: hidden;
-    color: white;
-    text-align: center;
+    overflow: hidden;  /* Evita el scroll en la página */
+    color: white;  /* Texto en color blanco */
+    text-align: center;  /* Alinea el texto al centro */
 }
 
 /* Fondo en video */
 #background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    position: fixed;  /* Fija el video para que siempre cubra toda la pantalla */
+    top: 0;  /* Lo posiciona en la parte superior */
+    left: 0;  /* Lo posiciona en la parte izquierda */
+    width: 100%;  /* Ocupa todo el ancho de la pantalla */
+    height: 100%;  /* Ocupa todo el alto de la pantalla */
+    object-fit: cover;  /* Escala el video para que cubra el área sin deformarse */
+    z-index: -1;  /* Lo coloca en el fondo sin tapar otros elementos */
 }
 
 /* Logo */
 #logo {
-    position: absolute;
-    top: 200px;
-    left: 12%; /* Alineado con el menú */
+    position: absolute;  /* Permite posicionarlo libremente dentro de la pantalla */
+    top: 200px;  /* Lo desplaza 200 píxeles desde la parte superior */
+    left: 12%;  /* Lo alinea con el menú */
 }
 
 #logo img {
-    width: 700px;
+    width: 700px;  /* Establece un ancho fijo para la imagen del logo */
 }
 
 /* Menú */
 #menu {
-    position: absolute;
-    top: 45%;
-    left: 12%;
-    list-style: none;
-    text-align: left;
-    padding: 0;
+    position: absolute;  /* Lo posiciona libremente en la pantalla */
+    top: 45%;  /* Lo coloca en la parte media de la pantalla */
+    left: 12%;  /* Lo alinea con el logo */
+    list-style: none;  /* Elimina los puntos de la lista */
+    text-align: left;  /* Alinea el texto de los elementos del menú a la izquierda */
+    padding: 0;  /* Elimina el relleno predeterminado */
 }
 
 .menu-item {
-    font-size: 50px;
-    padding: 10px 20px;
-    margin: 5px 0;
-    opacity: 0.7;
-    transition: opacity 0.3s, background 0.3s;
+    font-size: 50px;  /* Define el tamaño del texto de las opciones del menú */
+    padding: 10px 20px;  /* Añade espacio alrededor del texto */
+    margin: 5px 0;  /* Añade separación entre las opciones del menú */
+    opacity: 0.7;  /* Hace que las opciones sean semitransparentes por defecto */
+    transition: opacity 0.3s, background 0.3s;  /* Agrega una transición suave al cambiar la opacidad o el fondo */
 }
 
 .menu-item:hover, .selected {
-    opacity: 1;
-    background: rgba(255, 255, 255, 0.2);
+    opacity: 1;  /* Hace que la opción seleccionada sea completamente visible */
+    background: rgba(255, 255, 255, 0.2);  /* Añade un fondo semi-transparente a la opción seleccionada */
 }
