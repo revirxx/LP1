@@ -9,9 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const coopMenu = document.querySelector(".menu-item.coop");
     const volver = document.querySelector(".submenu-item.volver");
     const submenuItems = document.querySelectorAll(".submenu-item");
+    const submenu1 = document.getElementById("submenu-solo");
+    const soloMenu = document.querySelector(".menu-item.solo");
+    const submenuItems1 = document.querySelectorAll(".submenu-item1");
+    const volver1 = document.querySelector(".submenu-item1.volver");
 
     // Ocultar el submenú al recargar la página F5
     submenu.style.display = "none";
+    submenu1.style.display = "none";
 
     // Verificar usuario y contraseña
     boton_ingresar.addEventListener("click", () => {
@@ -50,6 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }); 
 
+    // Sonido al pasar sobre las opciones del submenú Jugar Solo
+    submenuItems1.forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            if (!hoverSound.paused) {
+                hoverSound.currentTime = 0;
+            }
+            hoverSound.play();
+        });
+    });     
+
     // Mostrar solo el submenu al hacer clic en "JUGAR PARTIDA COOP"
     coopMenu.addEventListener("click", function (event) {
         event.stopPropagation();
@@ -63,5 +78,21 @@ document.addEventListener("DOMContentLoaded", () => {
         menu.classList.remove("hidden");
         submenu.style.display = "none"; 
     });    
+
+
+
+    // Mostrar solo el submenu al hacer clic en "JUGAR SOLO"
+    soloMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+        menu.classList.add("hidden"); 
+        submenu1.style.display = "block"; 
+    });    
+
+    // Volver al menú principal
+    volver1.addEventListener("click", function (event) {
+        event.stopPropagation();
+        menu.classList.remove("hidden");
+        submenu1.style.display = "none"; 
+    });       
 });
 

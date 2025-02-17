@@ -13,10 +13,12 @@ body {
     text-align: center;  /* Alinea el texto al centro */
 }
 
-h1 {
-    width: 100%;
+p {
     padding: 20px;  /* Añade espacio alrededor del texto */
     padding-bottom: 45px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* Fondo en video */
@@ -112,9 +114,10 @@ h1 {
     list-style: none;  /* Elimina los puntos de la lista */
     text-align: left;  /* Alinea el texto de los elementos del menú a la izquierda */
     padding: 0;  /* Elimina el relleno predeterminado */
-    background-color: rgba(240, 248, 255, 0.973);
+    background-color: rgba(211, 211, 211, 0.979);
     color: black;
 }
+
 .submenu-item {
     font-size: 30px;  /* Define el tamaño del texto de las opciones del menú */
     padding: 10px;  /* Añade espacio alrededor del texto */
@@ -129,6 +132,38 @@ h1 {
     opacity: 1;  /* Hace que la opción seleccionada sea completamente visible */
     background: rgba(0, 0, 0, 0.692);  /* Añade un fondo semi-transparente a la opción seleccionada */
     color: white;
+}
+
+#submenu-solo {
+    position: absolute;  /* Lo posiciona libremente en la pantalla */
+    top: 40%;  /* Lo coloca en la parte media de la pantalla */
+    left: 12%;  /* Lo alinea con el logo */
+    list-style: none;  /* Elimina los puntos de la lista */
+    text-align: left;  /* Alinea el texto de los elementos del menú a la izquierda */
+    padding: 0;  /* Elimina el relleno predeterminado */
+    background-color: rgba(211, 211, 211, 0.979);
+    color: black;
+}
+.submenu-item1 {
+    font-size: 30px;  /* Define el tamaño del texto de las opciones del menú */
+    padding: 10px;  /* Añade espacio alrededor del texto */
+    padding-left: 20px;  /* espacio a la izquierda */
+    padding-right: 150px;  /* espacio a la derecha */
+    margin: 5px 0;  /* Añade separación entre las opciones del menú */
+    opacity: 0.7;  /* Hace que las opciones sean semitransparentes por defecto */
+    transition: opacity 0.3s, background 0.3s;  /* Agrega una transición suave al cambiar la opacidad o el fondo */
+}
+
+.submenu-item1:hover, .selected {
+    opacity: 1;  /* Hace que la opción seleccionada sea completamente visible */
+    background: rgba(0, 0, 0, 0.692);  /* Añade un fondo semi-transparente a la opción seleccionada */
+    color: white;
+}
+
+.submenu-item1.disabled {
+    color: gray;           /* Hace que el texto se vea gris */
+    pointer-events: none;  /* Evita que se pueda hacer clic */
+    opacity: 0.5;          /* Hace que se vea más tenue */
 }
 
 .hidden {
