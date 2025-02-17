@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +7,53 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <!-- Fondo video menu-->
+
+    <!-- Fondo en video -->
     <video autoplay loop muted id="background-video">
         <source src="/Proyecto final/Fondos/fondo_principal 1.mp4" type="video/mp4">
     </video>
 
-    <!-- Audio en menu -->
+    <!-- Audio en menú -->
     <audio id="menu-audio" loop autoplay>
         <source src="/Proyecto final/Sonidos/(Audio) fondo_principal.m4a" type="audio/mpeg">
     </audio>
-     
-    <!-- Logo -->
+
+    <!-- Pantalla de inicio de sesión -->
+    <div id="pant-log">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button id="boton-ingresar">Ingresar</button>
+        <p id="error-log"></p>
+    </div>
+
+    <!-- Logo - oculto hasta iniciar sesión -->
     <div id="logo">
         <img src="/Proyecto final/Fondos/logo.png" alt="Portal 2">
     </div>
     
-    <!-- Menú-->
-    <ul id="menu">
+    <!-- Menú del juego - Oculto al inicio -->
+    <ul id="menu" class="menu-container" style="display: none;">
         <li class="menu-item solo">JUGAR SOLO</li>
-        
-        <li class="menu-item coop">JUGAR PARTIDA COOP
-           <!-- <ul id="submenu-coop" class="submenu hidden">
-                <li class="submenu-item">Buscar Partida</li>
-                <li class="submenu-item">Invitar Amigos</li>
-                <li class="submenu-item volver">Volver</li>
-            </ul>-->
-        </li>
-    
+        <li class="menu-item coop">JUGAR PARTIDA COOP</li>
         <li class="menu-item">CÁMARAS DE LA COMUNIDAD</li>
         <li class="menu-item opc">OPCIONES</li>
         <li class="menu-item">EXTRAS</li>
         <li class="menu-item">SALIR</li>
-        <li class="menu-item">Desarrollo del robot</li>
+        <li class="menu-item">Desarrollo del Robot</li>
     </ul>
-    
-    <!-- Audio desplazamiento menu-->
+
+    <ul id="submenu-coop" class="submenu">
+        <h1>MODO COOP</h1>
+        <li class="submenu-item">COOP ESTÁNDAR</li>
+        <li class="submenu-item">MODO DESAFÍO COOP</li>
+        <li class="submenu-item volver">Atrás</li>
+    </ul>
+
+    <!-- Sonido desplazamiento menú -->
     <audio id="sonido_desp">
         <source src="/Proyecto final/Sonidos/desplazamiento.wav" type="audio/mpeg">
     </audio>
-    
-
     <script src="juego.js"></script>
 </body>
 </html>
