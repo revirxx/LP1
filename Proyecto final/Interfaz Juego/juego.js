@@ -13,10 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const soloMenu = document.querySelector(".menu-item.solo");
     const submenuItems1 = document.querySelectorAll(".submenu-item1");
     const volver1 = document.querySelector(".submenu-item1.volver");
+    const sigSound = document.getElementById("sonido_sigu");
+    const atrSound = document.getElementById("sonido_atras");
+    const submenu2 = document.getElementById("submenu-opc");
+    const opcMenu = document.querySelector(".menu-item.opc");
+    const submenuItems2 = document.querySelectorAll(".submenu-item2");
+    const volver2 = document.querySelector(".submenu-item2.volver");    
 
     // Ocultar el submenú al recargar la página F5
     submenu.style.display = "none";
     submenu1.style.display = "none";
+    submenu2.style.display = "none";    
 
     // Verificar usuario y contraseña
     boton_ingresar.addEventListener("click", () => {
@@ -65,11 +72,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });     
 
+    // Sonido al pasar sobre las opciones del submenú Opociones
+    submenuItems2.forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            if (!hoverSound.paused) {
+                hoverSound.currentTime = 0;
+            }
+            hoverSound.play();
+        });
+    });  
+
+
     // Mostrar solo el submenu al hacer clic en "JUGAR PARTIDA COOP"
-    coopMenu.addEventListener("click", function (event) {
+    coopMenu.addEventListener("click", function (event) {      
         event.stopPropagation();
         menu.classList.add("hidden"); 
         submenu.style.display = "block"; 
+        sigSound.play();
     });    
 
     // Volver al menú principal
@@ -77,15 +96,15 @@ document.addEventListener("DOMContentLoaded", () => {
         event.stopPropagation();
         menu.classList.remove("hidden");
         submenu.style.display = "none"; 
+        atrSound.play();
     });    
-
-
 
     // Mostrar solo el submenu al hacer clic en "JUGAR SOLO"
     soloMenu.addEventListener("click", function (event) {
         event.stopPropagation();
         menu.classList.add("hidden"); 
         submenu1.style.display = "block"; 
+        sigSound.play();
     });    
 
     // Volver al menú principal
@@ -93,6 +112,23 @@ document.addEventListener("DOMContentLoaded", () => {
         event.stopPropagation();
         menu.classList.remove("hidden");
         submenu1.style.display = "none"; 
+        atrSound.play();
     });       
+
+    // Mostrar solo el submenu al hacer clic en "OPCIONES"
+    opcMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+        menu.classList.add("hidden"); 
+        submenu2.style.display = "block"; 
+        sigSound.play();
+    });    
+
+    // Volver al menú principal
+    volver2.addEventListener("click", function (event) {
+        event.stopPropagation();
+        menu.classList.remove("hidden");
+        submenu2.style.display = "none"; 
+        atrSound.play();
+    });          
 });
 
