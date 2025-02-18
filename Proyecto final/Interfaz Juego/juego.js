@@ -18,12 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const submenu2 = document.getElementById("submenu-opc");
     const opcMenu = document.querySelector(".menu-item.opc");
     const submenuItems2 = document.querySelectorAll(".submenu-item2");
-    const volver2 = document.querySelector(".submenu-item2.volver");    
+    const volver2 = document.querySelector(".submenu-item2.volver"); 
+
+    const submenu3 = document.getElementById("submenu-mando");
+    const mandoMenu = document.querySelector(".menu-item.mando");
+    const submenuItems3 = document.querySelectorAll(".submenu-item3");
+    const volver3 = document.querySelector(".submenu-item3.volver"); 
+
+    const salir = document.getElementById("boton-salir");
 
     // Ocultar el submenú al recargar la página F5
     submenu.style.display = "none";
     submenu1.style.display = "none";
     submenu2.style.display = "none";    
+    submenu3.style.display = "none"; 
 
     // Verificar usuario y contraseña
     boton_ingresar.addEventListener("click", () => {
@@ -40,6 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
         else {  
             error_log.textContent = "Usuario o contraseña incorrectos.";
         }
+    });
+
+    // Salir lleva a la pantalla de logueo
+    salir.addEventListener("click", () => {
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        pant_log.style.display = "block";  // Mostrar login
+        menu_cont.style.display = "none";  // Ocultar menú
     });
 
     // Sonido al pasar sobre las opciones del menú
@@ -129,6 +145,23 @@ document.addEventListener("DOMContentLoaded", () => {
         menu.classList.remove("hidden");
         submenu2.style.display = "none"; 
         atrSound.play();
-    });          
+    });         
+    
+    // Mostrar solo el submenu al hacer clic en "MANDO"             COMO HAGOOOOOOOOO PARA QUE FUNCIONEEEE
+    mandoMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+        opcMenu.classList.add("hidden"); 
+        submenu3.style.display = "block"; 
+        sigSound.play();
+    });    
+
+    // Volver al menú OPCIONES                                      COMO HAGOOOOOOOOO PARA QUE FUNCIONEEEE
+    volver3.addEventListener("click", function (event) {
+        event.stopPropagation();
+        opcMenu.classList.remove("hidden");
+        submenu3.style.display = "none"; 
+        atrSound.play();
+    });     
+
 });
 
