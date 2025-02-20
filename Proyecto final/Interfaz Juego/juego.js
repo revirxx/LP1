@@ -19,11 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const opcMenu = document.querySelector(".menu-item.opc");
     const submenuItems2 = document.querySelectorAll(".submenu-item2");
     const volver2 = document.querySelector(".submenu-item2.volver"); 
-
     const submenu3 = document.getElementById("submenu-mando");
-    const mandoMenu = document.querySelector(".menu-item.mando");
+    const mandoMenu = document.querySelector(".submenu-item2:nth-child(5)");
+    const volver3 = document.querySelector("#submenu-mando .volver");
     const submenuItems3 = document.querySelectorAll(".submenu-item3");
-    const volver3 = document.querySelector(".submenu-item3.volver"); 
 
     const salir = document.getElementById("boton-salir");
 
@@ -88,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });     
 
-    // Sonido al pasar sobre las opciones del submenú Opociones
+    // Sonido al pasar sobre las opciones del submenú Opciones
     submenuItems2.forEach(item => {
         item.addEventListener("mouseenter", () => {
             if (!hoverSound.paused) {
@@ -98,6 +97,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });  
 
+    // Sonido al pasar sobre las opciones del submenú Mando
+    submenuItems3.forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            if (!hoverSound.paused) {
+                hoverSound.currentTime = 0;
+            }
+            hoverSound.play();
+        });
+    });     
 
     // Mostrar solo el submenu al hacer clic en "JUGAR PARTIDA COOP"
     coopMenu.addEventListener("click", function (event) {      
@@ -139,6 +147,20 @@ document.addEventListener("DOMContentLoaded", () => {
         sigSound.play();
     });    
 
+    mandoMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+        document.getElementById("submenu-opc").style.display = "none"; 
+        submenu3.style.display = "block"; 
+        sigSound.play();
+    });
+    
+    volver3.addEventListener("click", function (event) {
+        event.stopPropagation();
+        document.getElementById("submenu-opc").style.display = "block"; 
+        submenu3.style.display = "none"; 
+        atrSound.play();
+    });    
+
     // Volver al menú principal
     volver2.addEventListener("click", function (event) {
         event.stopPropagation();
@@ -146,22 +168,5 @@ document.addEventListener("DOMContentLoaded", () => {
         submenu2.style.display = "none"; 
         atrSound.play();
     });         
-    
-    // Mostrar solo el submenu al hacer clic en "MANDO"             COMO HAGOOOOOOOOO PARA QUE FUNCIONEEEE
-    mandoMenu.addEventListener("click", function (event) {
-        event.stopPropagation();
-        opcMenu.classList.add("hidden"); 
-        submenu3.style.display = "block"; 
-        sigSound.play();
-    });    
-
-    // Volver al menú OPCIONES                                      COMO HAGOOOOOOOOO PARA QUE FUNCIONEEEE
-    volver3.addEventListener("click", function (event) {
-        event.stopPropagation();
-        opcMenu.classList.remove("hidden");
-        submenu3.style.display = "none"; 
-        atrSound.play();
-    });     
-
 });
 
