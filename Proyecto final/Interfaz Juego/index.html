@@ -27,12 +27,12 @@
         <p id="error-log"></p>
     </div>
 
-    <!-- Logo - oculto hasta iniciar sesión -->
+    <!-- Logo -->
     <div id="logo">
         <img src="/Proyecto final/Fondos/logo.png" alt="Portal 2">
     </div>
     
-    <!-- Menú del juego - Oculto al inicio -->
+    <!-- Menú del juego -->
     <ul id="menu" class="menu-container" style="display: none;">
         <li class="menu-item solo">JUGAR SOLO</li>
         <li class="menu-item coop">JUGAR PARTIDA COOP</li>
@@ -47,7 +47,7 @@
         <div class="submenu-title">MODO COOP</div>
         <li class="submenu-item">COOP ESTÁNDAR</li>
         <li class="submenu-item">MODO DESAFÍO COOP</li>
-        <li class="submenu-item volver">Atrás</li>
+        <button class="submenu-item volver">Atrás</button>
     </ul>
 
     <ul id="submenu-solo" class="submenu">
@@ -57,7 +57,7 @@
         <li class="submenu-item1">CARGAR PARTIDA</li>
         <li class="submenu-item1">MODO DESAFÍO</li>
         <li class="submenu-item1">COMENTARIOS DESARROLLADORES</li>
-        <li class="submenu-item1 volver">Atrás</li>
+        <button class="submenu-item1 volver">Atrás</button>
     </ul>    
 
     <ul id="submenu-opc" class="submenu">
@@ -66,13 +66,20 @@
         <li class="submenu-item2">GRÁFICOS</li>
         <li class="submenu-item2">TECLADO/RATÓN</li>
         <li class="submenu-item2">MANDO</li>
-        <li class="submenu-item2 volver">Atrás</li>
+        <button class="submenu-item2 volver">Atrás</button>
     </ul>     
 
     <ul id="submenu-mando" class="submenu">
         <div class="submenu-title">MANDO</div>
-        <li class="submenu-item3">MANDO</li>
-        <li class="submenu-item3 volver">Atrás</li>
+        <li class="submenu-item3">
+            MANDO 
+           <span class="opc-cambiar">
+                <span class="camb-izq">◀</span>
+                <span class="valor-opc">Desactivado</span>
+                <span class="camb-dere">▶</span>
+            </span>
+        </li>
+        <button class="submenu-item3 volver">Atrás</button>
     </ul>  
 
     <!-- Sonido desplazamiento menú -->

@@ -118,6 +118,15 @@ body {
     color: black;
 }
 
+#submenu-coop button {
+    position: absolute;  /* Lo posiciona libremente en la pantalla */
+    top: 110%;  /* Lo coloca en la parte media de la pantalla */
+    left: 0;  /* Lo alinea con el logo */
+    text-align: left;  /* Alinea el texto de los elementos del menú a la izquierda */
+    padding: 5px 20px;  /* Añade espacio alrededor del texto */
+    font-size: 130%;
+}
+
 .submenu-item {
     font-size: 30px;  /* Define el tamaño del texto de las opciones del menú */
     padding: 10px;  /* Añade espacio alrededor del texto */
@@ -144,6 +153,16 @@ body {
     background-color: rgba(211, 211, 211, 0.979);
     color: black;
 }
+
+#submenu-solo button {
+    position: absolute;  /* Lo posiciona libremente en la pantalla */
+    top: 110%;  /* Lo coloca en la parte media de la pantalla */
+    left: 0;  /* Lo alinea con el logo */
+    text-align: left;  /* Alinea el texto de los elementos del menú a la izquierda */
+    padding: 5px 20px;  /* Añade espacio alrededor del texto */
+    font-size: 130%;
+}
+
 .submenu-item1 {
     font-size: 30px;  /* Define el tamaño del texto de las opciones del menú */
     padding: 10px;  /* Añade espacio alrededor del texto */
@@ -176,6 +195,16 @@ body {
     background-color: rgba(211, 211, 211, 0.979);
     color: black;
 }
+
+#submenu-opc button {
+    position: absolute;  /* Lo posiciona libremente en la pantalla */
+    top: 110%;  /* Lo coloca en la parte media de la pantalla */
+    left: 0;  /* Lo alinea con el logo */
+    text-align: left;  /* Alinea el texto de los elementos del menú a la izquierda */
+    padding: 5px 20px;  /* Añade espacio alrededor del texto */
+    font-size: 130%;
+}
+
 .submenu-item2 {
     font-size: 30px;  /* Define el tamaño del texto de las opciones del menú */
     padding: 10px;  /* Añade espacio alrededor del texto */
@@ -201,7 +230,10 @@ body {
     padding: 0;  /* Elimina el relleno predeterminado */
     background-color: rgba(211, 211, 211, 0.979);
     color: black;
+    width: 500px;   
 }
+
+
 .submenu-item3 {
     font-size: 30px;  /* Define el tamaño del texto de las opciones del menú */
     padding: 10px;  /* Añade espacio alrededor del texto */
@@ -210,12 +242,51 @@ body {
     margin: 5px 0;  /* Añade separación entre las opciones del menú */
     opacity: 0.7;  /* Hace que las opciones sean semitransparentes por defecto */
     transition: opacity 0.3s, background 0.3s;  /* Agrega una transición suave al cambiar la opacidad o el fondo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    position: relative;
 }
 
-.submenu-item3:hover, .selected {
+
+/* .submenu-item3:hover, .selected {
     opacity: 1;  /* Hace que la opción seleccionada sea completamente visible */
-    background: rgba(0, 0, 0, 0.692);  /* Añade un fondo semi-transparente a la opción seleccionada */
-    color: white;
+/*    background: rgba(0, 0, 0, 0.692);  /* Añade un fondo semi-transparente a la opción seleccionada */
+/*    color: white;
+}*/
+
+
+.opc-cambiar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px; 
+    position: relative;
+    left: 50%; 
+    transform: translateX(50%); 
+    text-align: center;
+}
+
+.camb-izq, .camb-dere {
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+}
+
+.valor-opc {
+    min-width: 200px;
+    text-align: center;
+}
+
+#submenu-mando button {
+    position: absolute;  /* Lo posiciona libremente en la pantalla */
+    top: 110%;  /* Lo coloca en la parte media de la pantalla */
+    left: 0;  /* Lo alinea con el logo */
+    text-align: left;  /* Alinea el texto de los elementos del menú a la izquierda */
+    padding: 5px 20px;  /* Añade espacio alrededor del texto */
+    font-size: 130%;
+    width: 92px;
 }
 
 .hidden {
