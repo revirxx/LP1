@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const submenu3 = document.getElementById("submenu-mando");
     const mandoMenu = document.querySelector(".submenu-item2:nth-child(5)");
-    const volver3 = document.querySelector("#submenu-mando .volver");
+    const volver3 = document.querySelector(".submenu-item3.volver");
     const submenuItems3 = document.querySelectorAll(".submenu-item3");
 
     const hoverSound = document.getElementById("sonido_desp");
@@ -37,11 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const cambIzq = cambflecha.querySelector(".camb-izq");
     const cambDerec = cambflecha.querySelector(".camb-dere");
 
+    const volumenControl = document.getElementById("control-volumen");
+    const menuAudio = document.getElementById("menu-audio");
+
 
     //Esto es para que el audio esté siempre activo, ya que algunos navegadores bloquean la reproducción automática
     document.addEventListener("click", function () {
         document.getElementById("menu-audio").play();
     }, { once: true });
+
 
     // Ocultar el submenú al recargar la página F5
     submenu.style.display = "none";
@@ -67,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     salir.addEventListener("click", () => {
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
-        alert("Cerrando sesión. Adiós")
+        alert("Adiós mi rey")
         pant_log.style.display = "block";  // Mostrar login
         menu_cont.style.display = "none";  // Ocultar menú
     });
@@ -164,14 +168,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mandoMenu.addEventListener("click", function (event) {
         event.stopPropagation();
-        document.getElementById("submenu-opc").style.display = "none"; 
+        submenu2.style.display = "none"; 
         submenu3.style.display = "block"; 
         sigSound.play();
     });
     
     volver3.addEventListener("click", function (event) {
         event.stopPropagation();
-        document.getElementById("submenu-opc").style.display = "block"; 
+        submenu2.style.display = "block"; 
         submenu3.style.display = "none"; 
         atrSound.play();
     });    
@@ -200,5 +204,21 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex = (currentIndex + 1) % options.length;
         updatevalor();
     }); 
+
+    // Cambiar el volumen en tiempo real
+    volumenControl.addEventListener("input", () => {
+        menuAudio.volume = volumenControl.value;
+        hoverSound.volume = volumenControl.value;
+        atrSound.volume = volumenControl.value;
+        sigSound.volume = volumenControl.value;
+    });
+
+    // Asegurar que el volumen inicie con el valor del slider
+    window.addEventListener("DOMContentLoaded", () => {
+        menuAudio.volume = volumenControl.value;
+        hoverSound.volume = volumenControl.value;
+        atrSound.volume = volumenControl.value;
+        sigSound.volume = volumenControl.value;
+    });
 });
 
