@@ -313,6 +313,7 @@ body {
 
 #control-volumen {
     width: 100px;
+    height: 6px;
     cursor: pointer;
 }
 
